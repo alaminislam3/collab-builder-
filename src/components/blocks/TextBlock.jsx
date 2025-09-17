@@ -1,0 +1,24 @@
+import React from "react";
+
+function TextBlock({ block, updateBlock, removeBlock }) {
+  return (
+    <div className="p-2 border rounded mb-2">
+      <div 
+        contentEditable 
+        suppressContentEditableWarning
+        className="outline-none"
+        onInput={(e) => updateBlock(block.id, { content: e.currentTarget.textContent })}
+      >
+        {block.content}
+      </div>
+      <button 
+        onClick={() => removeBlock(block.id)} 
+        className="mt-1 text-red-500"
+      >
+        Delete
+      </button>
+    </div>
+  );
+}
+
+export default TextBlock;

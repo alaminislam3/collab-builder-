@@ -1,12 +1,27 @@
-# React + Vite
+# React + Tailwind + Zustand + React DnD Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React project using TailwindCSS, Zustand for state management, React DnD for drag & drop, and React Icons.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- React (^19.1.1) & React DOM (^19.1.1)
+- TailwindCSS (^4.1.13) & @tailwindcss/vite (^4.1.13)
+- React Icons (^5.5.0)
+- Zustand (^5.0.8)
+- React DnD (^16.0.1) & React DnD HTML5 Backend (^16.0.1)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Setup
+
+1. **Clone the repo**  
+bash
+git clone <your-repo-url>
+cd <your-project-folder>
+
+2. install dependencies 
+npm install
+3.Start development server
+npm run dev

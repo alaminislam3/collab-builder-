@@ -1,6 +1,5 @@
 // App.jsx
 import React, { useEffect } from "react";
-import BlockRenderer from "./components/BlockRenderer";
 import useBlockStore from "./components/store"; 
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -27,7 +26,7 @@ function App() {
     const updatedBlocks = [...blocks];
     const [dragged] = updatedBlocks.splice(dragIndex, 1);
     updatedBlocks.splice(hoverIndex, 0, dragged);
-    loadBlocks(updatedBlocks); // store update
+    loadBlocks(updatedBlocks);
   };
 
   return (
@@ -40,6 +39,7 @@ function App() {
 
         {/* Toolbar */}
         <div className="flex gap-2 mb-6 justify-center">
+          {/* Text Button */}
           <button
             onClick={() =>
               addBlock({
@@ -52,24 +52,28 @@ function App() {
           >
             + Text
           </button>
+
+          {/* Image Button */}
           <button
             onClick={() =>
               addBlock({
                 id: Date.now().toString(),
                 type: "image",
-                src: "https://www.famousbaldpeople.com/wp-content/uploads/2016/12/Homer-Simpson.jpg",
+                src: "", // initially empty → will show input field
               })
             }
             className="bg-green-500 text-white px-3 py-1 rounded "
           >
             + Image
           </button>
+
+          {/* Video Button */}
           <button
             onClick={() =>
               addBlock({
                 id: Date.now().toString(),
                 type: "video",
-                src: "",
+                src: "", // initially empty → will show input field
               })
             }
             className="bg-red-500 text-white px-3 py-1 rounded"

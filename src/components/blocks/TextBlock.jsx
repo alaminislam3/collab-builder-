@@ -1,5 +1,5 @@
 import React from "react";
-import { useStore } from "./store"; // ✅ ঠিক path বসাও
+import { useStore } from "./store"; 
 
 function TextBlock({ block }) {
   const updateBlock = useStore((s) => s.updateBlock);

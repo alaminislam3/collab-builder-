@@ -10,7 +10,7 @@ function BlockRenderer({ block, updateBlock }) {
             type="text"
             value={block.content}
             onChange={(e) => updateBlock(block.id, { content: e.target.value })}
-           className="border p-2 w-full"
+            className="border p-2 w-full"
           />
         </div>
       );
@@ -18,21 +18,39 @@ function BlockRenderer({ block, updateBlock }) {
     case "image":
       return (
         <div>
-          <img src={block.src} alt="uploaded" className="w-full h-auto" />
+          {block.src ? (
+            <img src={block.src} alt="uploaded" className="w-full h-auto" />
+          ) : (
+            <input
+              type="text"
+              placeholder="paste your hosted url "
+              onBlur={(e) => updateBlock(block.id, { src: e.target.value })}
+              className="border p-2 w-full"
+            />
+          )}
         </div>
       );
 
     case "video":
       return (
         <div>
-          <iframe
-            width="560"
-            height="315"
-            src={block.src}
-            title="video"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
+          {block.src ? (
+            <iframe
+              width="560"
+              height="315"
+              src={block.src}
+              title="video"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <input
+              type="text"
+              placeholder="Paste video link..."
+              onBlur={(e) => updateBlock(block.id, { src: e.target.value })}
+              className="border p-2 w-full"
+            />
+          )}
         </div>
       );
 

@@ -7,23 +7,24 @@ function App() {
   const { blocks, addBlock, updateBlock, removeBlock, loadBlocks } = useBlockStore();
 
   // Load from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem("pageBlocks");
-    if (saved) {
-      loadBlocks(JSON.parse(saved));
-    }
-  }, [loadBlocks]);
 
-  // Save to localStorage on change
-  useEffect(() => {
-    localStorage.setItem("pageBlocks", JSON.stringify(blocks));
-  }, [blocks]);
+useEffect(() => {
+  const saved = localStorage.getItem("pageBlocks");
+  if (saved) {
+    loadBlocks(JSON.parse(saved));
+  }
+}, []); // only run once
+
+// Save to localStorage on change
+useEffect(() => {
+  localStorage.setItem("pageBlocks", JSON.stringify(blocks));
+}, [blocks]);
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
       {/* Title */}
       <h2 className="text-3xl font-bold text-center mb-6">
-        Dynamic Page Block
+        Let's Build Something Unique 
       </h2>
 
       {/* Toolbar */}

@@ -18,7 +18,11 @@ const useBlockStore = create((set) => ({
       blocks: state.blocks.filter((b) => b.id !== id),
     })),
 
-  loadBlocks: (savedBlocks) => set({ blocks: savedBlocks }),
+    loadBlocks: (savedBlocks) => {
+      console.log("Loading from storage:", savedBlocks);
+      set({ blocks: savedBlocks });
+    },
+    
 }));
 
 export default useBlockStore;

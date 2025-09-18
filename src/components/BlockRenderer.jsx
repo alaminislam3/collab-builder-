@@ -9,8 +9,8 @@ function BlockRenderer({ block, updateBlock }) {
           <input
             type="text"
             value={block.content}
-            onChange={(e) => updateBlock(block.id, e.target.value)}
-            className="border p-2 w-full"
+            onChange={(e) => updateBlock(block.id, { content: e.target.value })}
+           className="border p-2 w-full"
           />
         </div>
       );
